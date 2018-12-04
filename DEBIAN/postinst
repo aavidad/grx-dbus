@@ -1,0 +1,12 @@
+#!/bin/bash
+
+LOG=/var/log/grx/dbus-install.log
+
+echo "dbus-grx instalado" >>$LOG
+if [ ! -f /etc/systemd/system/grx.dbus.service ]; then
+    ln -s -f -b /lib/systemd/system/grx.dbus.service /etc/systemd/system/grx.dbus.service
+
+fi
+systemctl enable grx.dbus.service 
+systemctl start grx.dbus.service 
+service grx.dbus start

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Automatically added by dh_makeshlibs
+if [ "$1" = "remove" ]; then
+	ldconfig
+fi
+
+
+if [ -f /etc/systemd/system/grx.dbus.service ]; then
+    systemctl disable grx.dbus.service 
+
+fi
+
+# End automatically added section
+
+
+
